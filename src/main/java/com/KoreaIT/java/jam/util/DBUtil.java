@@ -1,4 +1,4 @@
-package com.KoreaIT.java.jam;
+package com.KoreaIT.java.jam.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +14,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.KoreaIT.java.jam.exception.SQLErrorException;
 
 
 

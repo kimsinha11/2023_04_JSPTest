@@ -13,11 +13,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.KoreaIT.java.jam.util.DBUtil;
+
 @WebServlet("/article/list")
 public class ArticleListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 		
 		response.setContentType("text/html;charset=UTF-8");
 		// DB 연결
@@ -47,6 +51,9 @@ public class ArticleListServlet extends HttpServlet {
 			List<Map<String, Object>> articleRows = dbUtil.selectRows(conn, sql); 
 			
 			response.getWriter().append(articleRows.toString());
+			// 서블릿에서 jsp에 뭔가를 알려줘야할때
+			request.setAttribute("articleRows", articleRows);
+			request.getRequestDispatcher("/jsp/article/list.jsp").forward(request, response);
 			
 		} catch (SQLException e) {
 
