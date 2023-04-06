@@ -39,6 +39,7 @@ public class HomeMainServlet3 extends HttpServlet {
 		int limit = Integer.parseInt(inputedLimit);
 		String color = inputedColor;
 		response.getWriter().append(String.format("<div style=\"color:%s;\">==%d단==</div>",color,dan));
+	
 
 		for (int j = 1; j <= limit; j++) {
 //			response.getWriter().append(dan + "*" + j + " = " + dan * j + "<br>");
